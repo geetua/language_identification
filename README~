@@ -1,0 +1,22 @@
+==================================
+     Language Identification
+==================================
+
+I wrote a simple module to identify language of an input sentence
+
+I grabbed some training data from http://cls.informatik.uni-leipzig.de/
+I use 100k sentences for each of the 3 languages eng, fra, deu - data is in
+traindata directory. I also took a non intersecting corpus of test sentences 
+in each language and these can be found in directory labelled testdata. 
+
+In order to train models, please run 'python train.py'
+This script will run through the train files and create unigram, bigram
+and trigram statistics for each language and write them to the directory 
+labelled 'models'
+
+In order to run over test corpus, run 'python test.py' after setting
+sanity_check in the script to 'True' 
+The script can also be run on command line with options 
+'python test.py -n 2 -i 'est la sélection de joueurs de'
+This will output a prediction language using the pretrained models 
+from the models directory
